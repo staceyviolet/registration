@@ -1,0 +1,26 @@
+.phone-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &__field{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 20px;
+  }
+
+  label {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 7px;
+    color: #555555;
+  }
+
+  input, select {
+    border: 1px #d3d3d3 solid;
+    border-radius: 4px;
+    background: #f8f8f8;
+    line-height: 24px;
+    padding: 5px;
+  }
+}

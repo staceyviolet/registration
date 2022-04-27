@@ -1,0 +1,21 @@
+.text-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  label {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 7px;
+    color: #555555;
+  }
+
+  input, textarea, select {
+    border: 1px #d3d3d3 solid;
+    border-radius: 4px;
+    background: #f8f8f8;
+    padding: 5px;
+    line-height: 24px;
+    color: #555555;
+  }
+}

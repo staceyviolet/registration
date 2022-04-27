@@ -1,0 +1,30 @@
+.input-group {
+  &__wrapper {
+    margin-bottom: 20px;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  button {
+    color: #555555;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.add-button {
+  button {
+    color: #555555;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+}

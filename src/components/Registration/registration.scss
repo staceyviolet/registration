@@ -1,0 +1,55 @@
+.registration {
+  background: rgb(174, 228, 238);
+  background: radial-gradient(
+                  circle,
+                  rgba(174, 228, 238, 1) 0%,
+                  rgba(162, 148, 233, 1) 100%
+  );
+  width: 100%;
+  min-height: 100vh;
+
+  &__header {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &_logo {
+      color: white;
+    }
+
+    &__nav {
+
+    }
+    &__nav-link {
+      color: white;
+    }
+    &__nav-image {
+      color: white;
+    }
+  }
+
+  &__body {
+    margin: 0 auto;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 #00000040;
+    min-height: 450px;
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .registration {
+    &__header {
+      margin: 0 auto;
+      width: 600px;
+    }
+
+    &__body {
+      margin: 0 auto;
+      width: 600px;
+    }
+  }
+}
+
