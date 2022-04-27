@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from "react";
+import React, {useState} from "react";
 import './formBody.scss'
 import {Step1} from "./Step1";
 import {Step2} from "./Step2";

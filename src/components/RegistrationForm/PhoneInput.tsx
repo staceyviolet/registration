@@ -13,15 +13,18 @@ export const PhoneInput: React.FC<Props> = ({
                                                 onChange,
                                                 value
                                             }) => {
-    const [countryCode, setCountryCode] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
+    const countryCodeValue = value.substring(0, value.indexOf(" "))
+    const phoneNumberValue = value.substring(value.indexOf(" ") + 1)
+
+    const [countryCode, setCountryCode] = useState(countryCodeValue)
+    const [phoneNumber, setPhoneNumber] = useState(phoneNumberValue)
 
     const codes = countryCodes.map((code: any) => {
         return (
-            <option
-                data-countrycode={code.code}
-                value={code.dial_code}
-                selected={countryCode === code.code}
+            <option key={code.code}
+                    data-countrycode={code.code}
+                    value={code.dial_code}
+                    selected={countryCode === code.dial_code}
             >
                 {code.code} {code.dial_code}
             </option>
@@ -30,6 +33,7 @@ export const PhoneInput: React.FC<Props> = ({
 
     useEffect(() => {
         onChange("phone", countryCode + " " + phoneNumber)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [countryCode, phoneNumber])
 
     return (
@@ -38,7 +42,7 @@ export const PhoneInput: React.FC<Props> = ({
             <div className={"phone-input__field"}>
                 <select id="countryCode"
                         name="countryCode"
-                        value={value.substring(0, value.indexOf(" "))}
+                        value={countryCodeValue}
                         onChange={(e) => {
                             setCountryCode(e.target.value);
                         }}
@@ -49,7 +53,7 @@ export const PhoneInput: React.FC<Props> = ({
                 <ReactInputMask type="tel"
                                 mask="(999) 999 99 99"
                                 placeholder="(555) 555-0199"
-                                value={value.substring(value.indexOf(" "))}
+                                value={phoneNumberValue}
                                 onChange={(e: any) => {
                                     setPhoneNumber(e.target.value);
                                 }}
