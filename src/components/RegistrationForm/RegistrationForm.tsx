@@ -4,6 +4,7 @@ import FormBody from "./FormBody";
 import {FormFooter} from "./FormFooter";
 
 import {useNavigate} from "react-router";
+import {FormHeader} from "./FormHeader";
 
 const RegistrationForm: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -16,9 +17,7 @@ const RegistrationForm: React.FC = () => {
 
     return (
         <div className={'registration-form'}>
-            <div className={'registration-form__header'}>
-                We're happy to see you here!
-            </div>
+            <FormHeader currentStep={currentStep}/>
             <FormBody currentStep={currentStep}/>
             <FormFooter currentStep={currentStep} setCurrentStep={setCurrentStep}/>
         </div>

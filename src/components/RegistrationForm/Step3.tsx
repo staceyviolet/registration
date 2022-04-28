@@ -44,6 +44,7 @@ export const Step3: React.FC<Props> = ({
     return (
         <div>
             <div className={"input-group__wrapper"}>
+                <h5>Education</h5>
                 {inputValues.userEducation.map((item: any) => {
                     return <InputGroup key={item.id}
                                        itemName={"Education"}
@@ -62,6 +63,7 @@ export const Step3: React.FC<Props> = ({
             </div>
 
             <div className={"input-group__wrapper"}>
+                <h5>Work Experience</h5>
                 {inputValues.userJobs.map((item: any) => {
                     return <InputGroup key={item.id}
                                        itemName={"Job"}

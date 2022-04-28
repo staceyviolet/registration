@@ -1,7 +1,8 @@
 .input-group {
-  margin-top: 20px;
   &__wrapper {
-    margin-bottom: 50px;
+    h5 {
+      color: #555555;
+    }
   }
   &__row {
     display: grid;
@@ -17,6 +18,7 @@
     display: block;
     margin-left: auto;
   }
+  margin-bottom: 10px;
 }
 
 .add-button {
@@ -26,7 +28,8 @@
     background: transparent;
     border: none;
     display: block;
-    margin: 20px auto 0;
+    height: 40px;
+    margin: -10px auto 0;
     font-weight: 600;
   }
 }
