@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import './multiselect.scss'
 
 const options = [
     {value: 'chocolate', label: 'Chocolate'},
@@ -19,10 +20,12 @@ export const Multiselect: React.FC<Props> = ({
 
 
     return (
-        <div>
+        <div className={'multiselect'}>
             <label htmlFor="skills">Skills</label>
             <Select isMulti
                     options={options}
+                    className={"multiselect__container"}
+                    classNamePrefix={"multiselect"}
                     value={value}
                     onChange={(e) => onChange('skills', e)}/>
 

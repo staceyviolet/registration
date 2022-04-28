@@ -1,0 +1,32 @@
+.multiselect {
+
+  margin-bottom: 15px;
+  label {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #555555;
+  }
+
+  &__control {
+    background: #f8f8f8 !important;
+    border: 1px #d3d3d3 solid !important;
+    min-height: 40px !important;
+    //cursor: pointer !important;
+  }
+
+  &__input-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !important;
+
+  }
+  &__container{
+    margin-top: 10px;
+
+  }
+
+  &__placeholder {
+    font-size: 12px;
+  }
+}
