@@ -1,10 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import FormBody                       from "./FormBody";
+import { FormFooter }                 from "./FormFooter";
+import { useNavigate }                from "react-router";
+import { FormHeader }                 from "./FormHeader";
 import './registrationForm.scss'
-import FormBody from "./FormBody";
-import {FormFooter} from "./FormFooter";
-
-import {useNavigate} from "react-router";
-import {FormHeader} from "./FormHeader";
 
 const RegistrationForm: React.FC = () => {
     const [currentStep, setCurrentStep] = useState(1)
@@ -13,7 +12,7 @@ const RegistrationForm: React.FC = () => {
 
     useEffect(() => {
         navigate("/" + currentStep);
-    }, [currentStep]);
+    }, [currentStep, navigate]);
 
     return (
         <div className={'registration-form'}>

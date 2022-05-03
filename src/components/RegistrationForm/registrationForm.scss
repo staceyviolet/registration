@@ -1,8 +1,9 @@
 .registration-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
+  min-height: 530px;
 
   &__header {
     background: #5e5e5e;
@@ -16,6 +17,10 @@
 
   &__body {
     padding: 0 30px 20px;
+  }
+
+  &__footer {
+    margin-top: auto;
   }
 
 }

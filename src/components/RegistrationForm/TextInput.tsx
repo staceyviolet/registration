@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React, { ChangeEvent } from "react";
 import './textInput.scss'
 
 interface Props {
@@ -14,12 +14,12 @@ export const TextInput: React.FC<Props> = ({
                                                label,
                                                placeholder,
                                                onChange,
-                                               value
-                                       }) => {
+                                               value,
+                                           }) => {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         e.preventDefault()
-        onChange(e.target.name,  e.target.value)
+        onChange(e.target.name, e.target.value)
     }
     return (
         <div className={'text-input'}>
