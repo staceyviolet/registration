@@ -47,7 +47,8 @@ export const Step3: React.FC<Props> = ({
                 <h5>Education</h5>
                 {inputValues.userEducation.map((item: any) => {
                     return <InputGroup key={item.id}
-                                       itemName={"Education"}
+                                       title={"Degree"}
+                                       name={"Institution"}
                                        values={item}
                                        onChange={(name: any, value: any) => handleChange(item.id, name, value, "userEducation")}
                                        showTopButtons={inputValues.userEducation.length > 1}
@@ -66,7 +67,8 @@ export const Step3: React.FC<Props> = ({
                 <h5>Work Experience</h5>
                 {inputValues.userJobs.map((item: any) => {
                     return <InputGroup key={item.id}
-                                       itemName={"Job"}
+                                       title={"Job Title"}
+                                       name={"Company"}
                                        values={item}
                                        onChange={(name: any, value: any) => handleChange(item.id, name, value, "userJobs")}
                                        showTopButtons={inputValues.userJobs.length > 1}

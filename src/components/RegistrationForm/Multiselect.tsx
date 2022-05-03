@@ -3,9 +3,9 @@ import Select from "react-select";
 import './multiselect.scss'
 
 const options = [
-    {value: 'chocolate', label: 'Chocolate'},
-    {value: 'strawberry', label: 'Strawberry'},
-    {value: 'vanilla', label: 'Vanilla'}
+    {value: 'html', label: 'HTML'},
+    {value: 'css', label: 'CSS'},
+    {value: 'javascript', label: 'JavaScript'}
 ]
 
 interface Props {
@@ -21,7 +21,7 @@ export const Multiselect: React.FC<Props> = ({
 
     return (
         <div className={'multiselect'}>
-            <label htmlFor="skills">Skills</label>
+            <label htmlFor="skills">Professional Skills</label>
             <Select isMulti
                     options={options}
                     className={"multiselect__container"}

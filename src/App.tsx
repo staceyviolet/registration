@@ -1,6 +1,6 @@
-import React from 'react';
-import {Registration} from "./components/Registration/Registration";
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import React                                      from 'react';
+import { Registration }                           from "./components/Registration/Registration";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
     return (

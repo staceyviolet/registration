@@ -4,7 +4,7 @@ import './formFooter.scss'
 interface Props {
     currentStep: number;
     setCurrentStep: (step: number) => void;
-    onSubmit?: () => void;
+    onSubmit: () => void;
 }
 
 export const FormFooter: React.FC<Props> = ({
@@ -26,24 +26,24 @@ export const FormFooter: React.FC<Props> = ({
     return (
         <div className="registration-form__footer">
             {currentStep !== 1 &&
-                <div className="registration-form__footer__button button-back">
-                    <button onClick={prevStep}>
-                        <i className="fa fa-arrow-left"/> Back
-                    </button>
-                </div>
+             <div className="registration-form__footer__button button-back">
+                 <button onClick={prevStep}>
+                     <i className="fa fa-arrow-left"/> Back
+                 </button>
+             </div>
             }
 
-            <div className="registration-form__footer__button button-next">
-                {currentStep !== 4 ?
-                    <button onClick={nextStep}>
-                        Next
-                    </button>
-                    :
-                    <button onClick={onSubmit}>
-                        Register
-                    </button>
+            {currentStep < 5 && <div className="registration-form__footer__button button-next">
+                {currentStep < 4 &&
+                 <button onClick={nextStep}>
+                     Next
+                 </button>
                 }
-            </div>
+                {currentStep === 4 && <button onClick={onSubmit}>
+                    Register
+                </button>
+                }
+            </div>}
         </div>
     );
 };

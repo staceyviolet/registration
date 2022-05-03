@@ -1,6 +1,6 @@
-import React, {ChangeEvent, useEffect, useState} from "react";
-import {TextInput} from "./TextInput";
-import {SingleSelect} from "./SingleSelect";
+import React            from "react";
+import { TextInput }    from "./TextInput";
+import { SingleSelect } from "./SingleSelect";
 import './inputGroup.scss'
 
 interface Month {
@@ -9,24 +9,25 @@ interface Month {
 }
 
 const months: Month[] = [
-    {key: "01", value: "January"},
-    {key: "02", value: "February"},
-    {key: "03", value: "March"},
-    {key: "04", value: "April"},
-    {key: "05", value: "May"},
-    {key: "06", value: "June"},
-    {key: "07", value: "July"},
-    {key: "08", value: "August"},
-    {key: "09", value: "September"},
-    {key: "10", value: "October"},
-    {key: "11", value: "November"},
-    {key: "12", value: "December"},
+    { key: "01", value: "January" },
+    { key: "02", value: "February" },
+    { key: "03", value: "March" },
+    { key: "04", value: "April" },
+    { key: "05", value: "May" },
+    { key: "06", value: "June" },
+    { key: "07", value: "July" },
+    { key: "08", value: "August" },
+    { key: "09", value: "September" },
+    { key: "10", value: "October" },
+    { key: "11", value: "November" },
+    { key: "12", value: "December" },
 ];
 
 const year = new Date().getFullYear() - 40;
 
 interface Props {
-    itemName: string
+    title: string
+    name: string
     values: any
     onChange: (name: any, value: any) => void,
     showTopButtons: boolean
@@ -34,7 +35,8 @@ interface Props {
 }
 
 export const InputGroup: React.FC<Props> = ({
-                                                itemName,
+                                                title,
+                                                name,
                                                 values,
                                                 onChange,
                                                 showTopButtons,
@@ -43,19 +45,19 @@ export const InputGroup: React.FC<Props> = ({
     return (
         <div className={"input-group"}>
             {showTopButtons &&
-                <button onClick={onRemove}>
-                    <i className={"fa fa-trash"}/>
-                </button>
+             <button onClick={onRemove}>
+                 <i className={"fa fa-trash"}/>
+             </button>
             }
             <div className={"input-group__row"}>
                 <TextInput name={"title"}
-                           label={itemName + " Title"}
-                           placeholder={itemName + " Title"}
+                           label={title}
+                           placeholder={title}
                            onChange={(name, value) => onChange(name, value)}
                            value={values.title}/>
                 <TextInput name={"name"}
-                           label={itemName + " Name"}
-                           placeholder={itemName + " Name"}
+                           label={name + " Name"}
+                           placeholder={name + " Name"}
                            onChange={(name, value) => onChange(name, value)}
                            value={values.name}/>
             </div>
@@ -65,9 +67,10 @@ export const InputGroup: React.FC<Props> = ({
                               placeholder={"Select year"}
                               onChange={(name, value) => onChange(name, value)}
                               value={values.startYear}
-                              options={Array.from(new Array(40), (v, i) => {
-                                  return {"key": year + i + 1, "value": year + i + 1}
-                              })}/>
+                              options={Array.from(new Array(40),
+                                                  (v, i) => {
+                                                      return { "key": year + i + 1, "value": year + i + 1 }
+                                                  }).reverse()}/>
                 <SingleSelect name={"startMonth"}
                               label={"Month"}
                               placeholder={"Select month"}
@@ -81,9 +84,10 @@ export const InputGroup: React.FC<Props> = ({
                               placeholder={"Select year"}
                               onChange={(name, value) => onChange(name, value)}
                               value={values.endYear}
-                              options={Array.from(new Array(40), (v, i) => {
-                                  return {"key": year + i + 1, "value": year + i + 1}
-                              })}/>
+                              options={Array.from(new Array(40),
+                                                  (v, i) => {
+                                                      return { "key": year + i + 1, "value": year + i + 1 }
+                                                  }).reverse()}/>
                 <SingleSelect name={"endMonth"}
                               label={"Month"}
                               placeholder={"Select month"}
